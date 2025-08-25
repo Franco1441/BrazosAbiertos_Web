@@ -61,39 +61,55 @@
       </div>
     </section>
 
-    <!-- HEADER -->
-    <header
-      class="fixed top-0 left-0 w-full bg-black bg-opacity-80 text-white z-20"
-      data-aos="fade-down"
-      data-aos-delay="300"
+<!-- HEADER -->
+<header
+  class="fixed top-0 left-0 w-full bg-black bg-opacity-80 text-white z-20"
+  data-aos="fade-down"
+  data-aos-delay="300"
+>
+  <nav
+    class="max-w-7xl mx-auto flex justify-between items-center p-4 rounded-xl bg-black bg-opacity-80"
+  >
+    <!-- Logo -->
+    <a
+      href="#inicio"
+      class="flex items-center gap-2 rounded-lg bg-black bg-opacity-60 p-2"
     >
-      <nav
-        class="max-w-7xl mx-auto flex justify-between items-center p-4 rounded-xl bg-black bg-opacity-80"
+      <img src="img/logo.png" alt="Logo" class="h-10 w-auto rounded-full" />
+      <span class="text-xl font-semibold hidden sm:inline"
+        >Brazos Abiertos</span
       >
-        <a
-          href="#inicio"
-          class="flex items-center gap-2 rounded-lg bg-black bg-opacity-60 p-2"
-        >
-          <img src="img/logo.png" alt="Logo" class="h-10 w-auto rounded-full" />
-          <span class="text-xl font-semibold hidden sm:inline"
-            >Brazos Abiertos</span
-          >
-        </a>
-        <ul class="hidden md:flex gap-6">
-          <li><a href="#inicio" class="hover:text-red-500">Inicio</a></li>
-          <li><a href="#nosotros" class="hover:text-red-500">Nosotros</a></li>
-          <li>
-            <a href="#actividades" class="hover:text-red-500">Actividades</a>
-          </li>
-          <li>
-            <a href="#ministerios" class="hover:text-red-500">Ministerios</a>
-          </li>
-          <li><a href="#mensajes" class="hover:text-red-500">Mensajes</a></li>
-          <li><a href="#ofrendas" class="hover:text-red-500">Ofrendas</a></li>
-          <li><a href="#contacto" class="hover:text-red-500">Contacto</a></li>
-        </ul>
-      </nav>
-    </header>
+    </a>
+
+    <!-- Botón hamburguesa -->
+    <button
+      id="menu-btn"
+      class="md:hidden text-white focus:outline-none text-3xl"
+    >
+      ☰
+    </button>
+
+    <!-- Links -->
+    <ul id="menu" class="hidden md:flex gap-6 flex-col md:flex-row bg-black md:bg-transparent absolute md:static top-16 left-0 w-full md:w-auto p-4 md:p-0">
+      <li><a href="#inicio" class="hover:text-red-500">Inicio</a></li>
+      <li><a href="#nosotros" class="hover:text-red-500">Nosotros</a></li>
+      <li><a href="#actividades" class="hover:text-red-500">Actividades</a></li>
+      <li><a href="#ministerios" class="hover:text-red-500">Ministerios</a></li>
+      <li><a href="#mensajes" class="hover:text-red-500">Mensajes</a></li>
+      <li><a href="#ofrendas" class="hover:text-red-500">Ofrendas</a></li>
+      <li><a href="#contacto" class="hover:text-red-500">Contacto</a></li>
+    </ul>
+  </nav>
+</header>
+
+<script>
+  const btn = document.getElementById("menu-btn");
+  const menu = document.getElementById("menu");
+  btn.addEventListener("click", () => {
+    menu.classList.toggle("hidden");
+    menu.classList.toggle("flex");
+  });
+</script>
 
     <main>
       <!-- SOBRE NOSOTROS -->
@@ -195,7 +211,7 @@
             <p>18 a 19:30 H</p>
             <p>19:30 a 21 H</p>
           </div>
-          <div data-aos="fade-up" data-aos-delay="500">
+          <div class="col-span-2 md:col-span-5" data-aos="fade-up" data-aos-delay="500">
             <h3>Viernes</h3>
             <p>18 a 19:30 H</p>
           </div>
