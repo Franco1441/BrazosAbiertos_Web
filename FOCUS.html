@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FOCUS — Adolescentes</title>
+    <meta
+      name="description"
+      content="FOCUS • Ministerio de adolescentes de Brazos Abiertos."
+    />
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Opcional: asegurar tipografía del sistema, look limpio */
+      body {
+        font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+          Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      }
+      /* Ratio 16:9 sin plugins */
+      .ratio-16x9 {
+        position: relative;
+        width: 100%;
+        padding-top: 56.25%;
+      }
+      .ratio-16x9 > * {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body class="bg-white text-black">
+    <!-- Header simple -->
+    <header class="border-b border-gray-200">
+      <div
+        class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between"
+      >
+        <a href="index.html" class="flex items-center gap-3">
+          <img
+            src="img/logo.png"
+            alt="Brazos Abiertos"
+            class="h-10 w-10 rounded-full"
+          />
+          <span class="text-base font-medium tracking-wide"
+            >Brazos Abiertos</span
+          >
+        </a>
+        <nav class="hidden md:flex items-center gap-6 text-sm">
+          <a href="#horarios" class="hover:underline">Horarios</a>
+          <a href="#video" class="hover:underline">Video</a>
+          <a href="#galeria" class="hover:underline">Galería</a>
+        </nav>
+      </div>
+    </header>
+
+<main>
+  <!-- HERO minimal con imagen de fondo -->
+  <section
+    class="relative w-full h-60 md:h-80 flex items-center justify-center text-center bg-black"
+  >
+    <!-- Imagen de fondo bajada -->
+    <img
+      src="img/focus4.jpg"
+      alt="FOCUS fondo"
+      class="absolute inset-0 w-full h-full object-cover object-[center_25%] opacity-70"
+    />
+
+    <!-- Overlay oscuro -->
+    <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+
+    <!-- Logo centrado con color invertido -->
+    <div class="relative z-10 flex flex-col items-center">  
+      <img
+        src="img/FOCUS BLACK.png"
+        alt="Logo FOCUS"
+        class="w-40 md:w-56 mb-4 filter invert"
+      />
+      <p class="mt-2 text-lg md:text-xl text-white">
+        Adolescentes — Brazos Abiertos
+      </p>
+    </div>
+  </section>
+</main>
+
+ <!-- Horarios -->
+      <section id="horarios" class="border-t border-gray-200">
+        <div class="max-w-4xl mx-auto px-4 py-16 text-center">
+          <h3 class="text-2xl md:text-3xl font-semibold">Horarios</h3>
+          <div class="mt-8 grid sm:grid-cols-3 gap-6 text-left sm:text-center">
+            <div class="space-y-1">
+              <p class="text-sm uppercase tracking-widest text-gray-500">Día</p>
+              <p class="text-lg">Sabado</p>
+            </div>
+            <div class="space-y-1">
+              <p class="text-sm uppercase tracking-widest text-gray-500">
+                Horario
+              </p>
+              <p class="text-lg">18:00 – 20:00</p>
+            </div>
+            <div class="space-y-1">
+              <p class="text-sm uppercase tracking-widest text-gray-500">
+                Lugar
+              </p>
+              <p class="text-lg">Auditorio — Brazos Abiertos</p>
+            </div>
+          </div>
+
+          <!-- CTA opcional, mantiene estética en b/n -->
+          <div class="mt-10">
+            <a
+              href="index.html#contacto"
+              class="inline-block px-5 py-2 border border-black"
+            >
+              Escribinos para + info
+            </a>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- Bloque 1: izquierda frase / derecha video -->
+      <section id="video" class="border-t border-gray-200">
+        <div
+          class="max-w-6xl mx-auto px-4 py-16 grid md:grid-cols-2 gap-10 md:gap-16"
+        >
+          <!-- Frase -->
+          <div class="flex items-center">
+            <blockquote class="space-y-6">
+              <p class="text-2xl md:text-3xl leading-snug">
+                “Enfocamos nuestros ojos en Jesús, aprendemos Su Palabra y
+                crecemos juntos en comunidad.”
+              </p>
+              <footer class="text-sm text-gray-600">
+                FOCUS • Adolescentes
+              </footer>
+            </blockquote>
+          </div>
+          <!-- Video -->
+          <div class="ratio-16x9" aria-label="Video de FOCUS">
+            <!-- Reemplaza el src con tu video -->
+            <iframe
+              src="https://www.youtube.com/embed/VIDEO_ID"
+              title="FOCUS video"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </section>
+
+<!-- Bloque 2: izquierda carrusel / derecha frase -->
+<section id="galeria" class="border-t border-gray-200">
+  <div class="max-w-6xl mx-auto px-4 py-16 grid md:grid-cols-2 gap-10 md:gap-16">
+
+    <!-- Carrusel -->
+    <div class="swiper mySwiper w-full h-full">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="img/focus1.jpg" alt="Encuentro FOCUS 1" class="w-full h-64 md:h-96 object-cover" />
+        </div>
+        <div class="swiper-slide">
+          <img src="img/focus2.jpg" alt="Encuentro FOCUS 2" class="w-full h-64 md:h-96 object-cover" />
+        </div>
+        <div class="swiper-slide">
+          <img src="img/focus3.jpg" alt="Encuentro FOCUS 3" class="w-full h-64 md:h-96 object-cover" />
+        </div>
+        <div class="swiper-slide">
+          <img src="img/focus4.jpg" alt="Encuentro FOCUS 4" class="w-full h-64 md:h-96 object-cover" />
+        </div>
+      </div>
+
+      <!-- Controles -->
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+
+    <!-- Frase derecha -->
+    <div class="flex items-center">
+      <div class="space-y-6">
+        <h2 class="text-3xl md:text-4xl font-semibold leading-tight">
+          Identidad, amistad y adoración.
+        </h2>
+        <p class="text-base md:text-lg text-gray-700">
+          Creamos espacios simples y reales para conocer a Jesús, hacer
+          amigos y servir juntos.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <a href="https://www.instagram.com/" target="_blank" class="px-4 py-2 border border-black">
+            Instagram
+          </a>
+          <a href="index.html#contacto" class="px-4 py-2 border border-black">
+            Contacto
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Swiper CSS & JS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script>
+  const swiper = new Swiper(".mySwiper", {
+    loop: true,
+    spaceBetween: 20,
+    slidesPerView: 1,
+    pagination: { el: ".swiper-pagination", clickable: true },
+    navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+  });
+</script>
+
+     
+    </main>
+
+    <footer class="border-t border-gray-200">
+      <div class="max-w-6xl mx-auto px-4 py-8 text-sm text-gray-600">
+        © 2025 Brazos Abiertos — FOCUS.
+      </div>
+    </footer>
+  </body>
+</html>

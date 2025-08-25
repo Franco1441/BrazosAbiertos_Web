@@ -1,0 +1,11 @@
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "tailwindCSS.includeLanguages": {
+    "html": "html"
+  },
+  "liveServer.settings.port": 5500,
+  "liveServer.settings.useLocalIp": true,
+  "liveServer.settings.wait": 500,
+  "files.autoSave": "onWindowChange"
+}

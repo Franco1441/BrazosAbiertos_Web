@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fundación Brazos Abiertos</title>
+    <meta
+      name="description"
+      content="Fundación Brazos Abiertos • Ayuda social, esperanza y transformación."
+    />
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-white text-gray-900">
+    <!-- HEADER -->
+    <header class="border-b border-gray-200 bg-white">
+      <div
+        class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between"
+      >
+        <a href="index.html" class="flex items-center gap-3">
+          <img src="img/LOGO.png" alt="Logo Fundación" class="h-12" />
+          <span class="text-lg font-semibold tracking-wide">
+            Fundación Brazos Abiertos
+          </span>
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="relative h-72 md:h-96 flex items-center justify-center">
+        <img
+          src="img/cuidado-de-ancianos.jpg"
+          alt="Fundación Brazos Abiertos"
+          class="absolute inset-0 w-full h-full object-cover"
+        />
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+        <div class="relative z-10 text-center text-white">
+          <img
+            src="img/Fundacion_logo.png"
+            alt="Logo Fundación"
+            class="mx-auto invert w-32 md:w-48 mb-4"
+          />
+          <h1 class="text-3xl md:text-5xl font-bold">
+            Fundación Brazos Abiertos
+          </h1>
+          <p class="mt-2 text-lg md:text-xl">
+            Ayudando a transformar vidas con amor y esperanza
+          </p>
+        </div>
+      </section>
+
+      <!-- MISION / VISION -->
+      <section class="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-3 gap-10">
+        <div class="text-center">
+          <h3 class="text-xl font-semibold mb-3">Misión</h3>
+          <p class="text-gray-600">
+            Llevar esperanza, asistencia y herramientas a quienes más lo
+            necesitan en nuestra comunidad.
+          </p>
+        </div>
+        <div class="text-center">
+          <h3 class="text-xl font-semibold mb-3">Visión</h3>
+          <p class="text-gray-600">
+            Ser un puente de transformación social y espiritual con impacto
+            duradero.
+          </p>
+        </div>
+        <div class="text-center">
+          <h3 class="text-xl font-semibold mb-3">Valores</h3>
+          <p class="text-gray-600">
+            Amor, solidaridad, fe y compromiso con las personas.
+          </p>
+        </div>
+      </section>
+
+      <!-- CÓMO AYUDAR -->
+      <section
+        class="bg-gray-100 py-16 px-6 text-center border-t border-b border-gray-200"
+      >
+        <h2 class="text-2xl md:text-3xl font-semibold mb-6">Cómo ayudar</h2>
+        <p class="text-lg mb-6 max-w-2xl mx-auto text-gray-700">
+          Podés sumarte con tu donación para seguir llevando esperanza a más
+          personas. Usá el siguiente alias para transferencias:
+        </p>
+
+        <div class="flex flex-col items-center gap-4">
+          <div
+            class="bg-white px-6 py-3 rounded-lg shadow border text-lg font-medium"
+            id="alias"
+          >
+            BRAZOS.ABIERTOS.FUND
+          </div>
+          <button
+            onclick="copiarAlias()"
+            class="px-6 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition"
+          >
+            Copiar alias
+          </button>
+        </div>
+      </section>
+
+      <!-- CONTACTO -->
+      <section id="contacto" class="py-16 px-6 bg-white">
+        <div class="max-w-3xl mx-auto text-center">
+          <h2 class="text-2xl md:text-3xl font-semibold mb-6">Contacto</h2>
+          <p class="mb-8 text-gray-600">
+            Escribinos si querés más información o sumarte como voluntario.
+          </p>
+          <form
+            action="https://formspree.io/f/mayvlrzo"
+            method="POST"
+            class="space-y-4 text-left"
+          >
+            <input
+              type="text"
+              name="nombre"
+              placeholder="Tu nombre"
+              required
+              class="w-full p-3 border rounded"
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Tu email"
+              required
+              class="w-full p-3 border rounded"
+            />
+            <textarea
+              name="mensaje"
+              placeholder="Tu mensaje"
+              rows="4"
+              required
+              class="w-full p-3 border rounded"
+            ></textarea>
+            <button
+              type="submit"
+              class="px-6 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition"
+            >
+              Enviar
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer
+      class="border-t border-gray-200 py-6 text-center text-sm text-gray-500"
+    >
+      © 2025 Fundación Brazos Abiertos. Todos los derechos reservados.
+    </footer>
+
+    <script>
+      function copiarAlias() {
+        const alias = document.getElementById("alias").textContent;
+        navigator.clipboard.writeText(alias).then(() => {
+          alert("Alias copiado: " + alias);
+        });
+      }
+    </script>
+  </body>
+</html>

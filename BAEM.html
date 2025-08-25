@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="BAEM - Brazos Abiertos Escuela Ministerial."
+    />
+    <meta name="author" content="Franco Rotta" />
+    <title>BAEM — Brazos Abiertos</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+    <style>
+      @font-face {
+        font-family: "Marsden";
+        src: url("fonts/Marsden-Nr-Bold.otf") format("opentype");
+      }
+      @font-face {
+        font-family: "Stratford";
+        src: url("fonts/StratfordRegular.ttf") format("truetype");
+      }
+      body {
+        font-family: "Helvetica", Arial, sans-serif;
+      }
+      .video-background {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.4;
+        object-fit: cover;
+        z-index: -1;
+        will-change: transform;
+        transform: translateY(0);
+        transition: transform 0.1s ease-out;
+      }
+    </style>
+  </head>
+  <body class="text-white bg-black">
+    <!-- HEADER -->
+    <header
+      class="fixed top-0 left-0 w-full bg-opacity-90 text-white z-20"
+      data-aos="fade-down"
+    >
+      <nav
+        class="max-w-7xl mx-auto flex justify-between items-center p-4 rounded-xl bg-black bg-opacity-90"
+      >
+        <a
+          href="index.html"
+          class="flex items-center gap-2 rounded-lg bg-black bg-opacity-60 p-2"
+        >
+          <img src="img/logo.png" alt="Logo" class="h-10 w-auto rounded-full" />
+          <span class="text-xl font-semibold hidden sm:inline"
+            >Brazos Abiertos</span
+          >
+        </a>
+        <button
+          class="md:hidden focus:outline-none"
+          onclick="toggleMenu(this)"
+          aria-label="Abrir menú"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <svg
+            class="w-7 h-7"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+        <ul
+          id="mobile-menu"
+          class="hidden absolute top-full left-0 w-full bg-black/95 md:static md:flex md:w-auto md:bg-transparent flex-col gap-2 p-4 md:flex-row md:gap-6 md:p-0"
+        >
+          <li>
+            <a href="#inicio" class="block py-2 px-4 hover:text-red-500"
+              >Inicio</a
+            >
+          </li>
+          <li>
+            <a href="#proposito" class="block py-2 px-4 hover:text-red-500"
+              >Propósito</a
+            >
+          </li>
+          <li>
+            <a href="#materias" class="block py-2 px-4 hover:text-red-500"
+              >Materias</a
+            >
+          </li>
+          <li>
+            <a href="#inscripciones" class="block py-2 px-4 hover:text-red-500"
+              >Inscripciones</a
+            >
+          </li>
+          <li>
+            <a href="#contacto" class="block py-2 px-4 hover:text-red-500"
+              >Contacto</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <section
+      id="inicio"
+      class="relative h-screen flex items-center justify-center text-center"
+    >
+      <video
+        autoplay
+        muted
+        playsinline
+        loop
+        class="video-background"
+        poster="img/baem-poster.jpg"
+      >
+        <source src="videos/animacion logo esc.mp4" type="video/mp4" />
+      </video>
+      <div class="z-10 p-6">
+        <h1 class="text-5xl md:text-6xl font-bold mb-3">BAEM</h1>
+        <p class="text-xl md:text-2xl opacity-90">
+          Brazos Abiertos Escuela Ministerial
+        </p>
+      </div>
+    </section>
+
+    <!-- INSCRIPCIONES -->
+    <section
+      class="relative w-full flex items-center justify-center min-h-[300px] md:min-h-[500px] lg:min-h-[800px] overflow-hidden bg-[#e8dfd7]"
+    >
+      <img
+        src="img/inscripciones abiertas.png"
+        alt="Inscripciones abiertas"
+        class="absolute inset-0 w-full h-full object-contain z-0"
+      />
+    </section>
+
+    <!-- PROPÓSITO -->
+    <section id="proposito" class="py-20 px-6 bg-[#e8dfd7] text-center">
+      <h2 class="text-6xl text-[#5882be] font-bold mb-6">Propósito y Visión</h2>
+      <p class="max-w-4xl text-[#5882be] mx-auto text-2xl leading-relaxed">
+        BAEM existe para capacitar a hijos de Dios en el carácter de Cristo,
+        equiparlos en la Palabra y entrenarlos para servir eficazmente en la
+        obra del Señor. Nuestra visión es ver creyentes maduros, llenos del
+        Espíritu Santo y apasionados por cumplir la Gran Comisión.
+      </p>
+    </section>
+
+    <!-- MATERIAS -->
+    <section id="materias" class="py-20 px-6 bg-black" data-aos="fade-up">
+      <h2 class="text-4xl font-bold mb-12 text-center">Materias</h2>
+      <div
+        class="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-6xl mx-auto text-center"
+      >
+        <div
+          class="bg-[#e7ded7] p-6 rounded-lg shadow hover:scale-105 transition"
+        >
+          <h3 class="text-xl text-black font-semibold mb-2">Carácter</h3>
+          <p class="text-black text-sm">
+            Formar el carácter de Cristo en la vida del creyente.
+          </p>
+        </div>
+        <div
+          class="bg-[#5b7fba] p-6 rounded-lg shadow hover:scale-105 transition"
+        >
+          <h3 class="text-xl text-black font-semibold mb-2">Devoción</h3>
+          <p class="text-black text-sm">
+            Desarrollar una vida íntima y constante con Dios.
+          </p>
+        </div>
+        <div
+          class="bg-[#ecf978] p-6 rounded-lg shadow hover:scale-105 transition"
+        >
+          <h3 class="text-xl text-black font-semibold mb-2">
+            Principios de Reino
+          </h3>
+          <p class="text-black text-sm">
+            Entender y aplicar los valores del Reino de Dios.
+          </p>
+        </div>
+        <div
+          class="bg-[#da582f] p-6 rounded-lg shadow hover:scale-105 transition"
+        >
+          <h3 class="text-xl text-black font-semibold mb-2">Últimos Tiempos</h3>
+          <p class="text-black text-sm">
+            Comprender el plan de Dios para los últimos días.
+          </p>
+        </div>
+        <div
+          class="bg-[#ffbb7d] p-6 rounded-lg shadow hover:scale-105 transition"
+        >
+          <h3 class="text-xl text-black font-semibold mb-2">Iglesia</h3>
+          <p class="text-black text-sm">
+            Conocer el diseño y propósito de la Iglesia.
+          </p>
+        </div>
+        <div
+          class="bg-[#f0a6f2] p-6 rounded-lg shadow hover:scale-105 transition"
+        >
+          <h3 class="text-xl text-black font-semibold mb-2">Evangelismo</h3>
+          <p class="text-black text-sm">
+            Compartir el Evangelio con pasión y eficacia.
+          </p>
+        </div>
+        <div
+          class="bg-[#a9dce8] p-6 rounded-lg shadow hover:scale-105 transition"
+        >
+          <h3 class="text-xl text-black font-semibold mb-2">
+            La Gran Comisión
+          </h3>
+          <p class="text-black text-sm">
+            Cumplir el mandato de ir y hacer discípulos.
+          </p>
+        </div>
+        <div
+          class="bg-[#bdb2fd] p-6 rounded-lg shadow hover:scale-105 transition"
+        >
+          <h3 class="text-xl text-black font-semibold mb-2">Mesa</h3>
+          <p class="text-black text-sm">
+            Aprender en comunidad y unidad de fe.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN FOTO + BOTONES -->
+    <section
+      class="relative w-full flex items-center justify-center min-h-[400px] md:min-h-[600px] overflow-hidden"
+    >
+      <img
+        src="img/DSC_9395-2.jpg"
+        alt="BAEM"
+        class="absolute inset-0 w-full h-full object-cover z-0"
+      />
+      <div
+        class="relative z-10 flex flex-col md:flex-row gap-4 items-center justify-center text-center px-4"
+      >
+        <a
+          href="https://docs.google.com/forms/d/1N4lX0A9WTwVbrTnhL3Ej17V1CsQ0t2ovtzhl6lh5IvU/edit"
+          target="_blank"
+          class="bg-[#ffb579] hover:bg-[#de542d] text-white font-semibold py-3 px-6 rounded-full shadow-lg transition focus:ring-2 focus:ring-[#de542d]"
+        >
+          Inscribite acá
+        </a>
+        <a
+          href="archivos/BAEM-PDF.pdf"
+          target="_blank"
+          class="bg-[#beb2ff] hover:bg-[#5d7eb9] text-white font-semibold py-3 px-6 rounded-full shadow-lg transition focus:ring-2 focus:ring-[#5d7eb9]"
+        >
+          Ver información
+        </a>
+      </div>
+    </section>
+
+    <!-- PLAN DE ESTUDIO -->
+    <section id="plan-estudio" class="py-20 px-6 bg-white text-center">
+      <h2 class="text-4xl text-black font-bold mb-12">Plan de estudio</h2>
+      <div class="max-w-5xl mx-auto space-y-8">
+        <p class="text-black text-xl font-bold leading-relaxed">
+          Nuestro plan de estudio está diseñado para formar líderes, consolidar
+          el carácter de Cristo y entrenar en principios bíblicos sólidos. El
+          curso está dividido en módulos que integran teoría y práctica
+          ministerial.
+        </p>
+        <img
+          src="img/plan-estudio.png"
+          alt="Plan de estudio BAEM"
+          class="mx-auto"
+          data-aos="zoom-in"
+        />
+      </div>
+    </section>
+
+    <!-- MODALIDAD Y CRONOGRAMA -->
+    <section
+      id="modalidad"
+      class="py-20 px-6 bg-black text-center"
+      data-aos="fade-up"
+    >
+      <h2 class="text-4xl font-bold mb-12">Modalidad y Cronograma</h2>
+      <div
+        class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 text-left"
+      >
+        <!-- Modalidad -->
+        <div
+          class="bg-[#eda9f4] p-8 rounded-lg shadow-lg hover:scale-105 transition"
+        >
+          <h3 class="text-2xl font-semibold mb-4 text-white">Modalidad</h3>
+          <p class="text-black font-semibold leading-relaxed">
+            Clases presenciales en las instalaciones de Iglesia Brazos Abiertos.
+            <br /><br />
+            Cada materia combina enseñanza teórica, prácticas ministeriales y
+            mentorías personalizadas.
+          </p>
+        </div>
+
+        <!-- Cronograma -->
+        <div
+          class="bg-[#5e7cbe] p-8 rounded-lg shadow-lg hover:scale-105 transition"
+        >
+          <h3 class="text-2xl font-semibold mb-4 text-white">Cronograma</h3>
+          <ul class="list-disc pl-5 font-semibold space-y-2 text-black">
+            <li>Inicio de cursada: Marzo 2025</li>
+            <li>Duración: 8 meses</li>
+            <li>Frecuencia: 1 vez por semana</li>
+            <li>Horario: 19:30 a 21:30 hs</li>
+            <li>Evaluaciones: finales por módulo</li>
+            <li>Entrega de certificados en noviembre</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section
+      id="contacto"
+      class="py-20 px-6 bg-black text-center"
+      data-aos="fade-up"
+    >
+      <h2 class="text-5xl font-bold mb-6">Contacto</h2>
+      <p class="mb-4">
+        Estamos para escucharte. Envianos tu mensaje o visita nuestras redes.
+      </p>
+      <form
+        action="https://formspree.io/f/mayvlrzo"
+        method="POST"
+        class="max-w-xl mx-auto text-left"
+      >
+        <label class="block mb-2"
+          >Nombre:
+          <input
+            type="text"
+            name="nombre"
+            required
+            class="w-full p-2 rounded text-black"
+          />
+        </label>
+        <label class="block mb-2"
+          >Email:
+          <input
+            type="email"
+            name="email"
+            required
+            class="w-full p-2 rounded text-black"
+          />
+        </label>
+        <label class="block mb-4"
+          >Mensaje:
+          <textarea
+            name="mensaje"
+            rows="4"
+            required
+            class="w-full p-2 rounded text-black"
+          ></textarea>
+        </label>
+        <button
+          type="submit"
+          class="bg-red-800 hover:bg-red-500 px-6 py-2 rounded text-white transition"
+        >
+          Enviar
+        </button>
+      </form>
+      <div class="mt-6">
+        <a href="https://wa.me/XXXXXXXXXXX" class="text-red-500 underline"
+          >Escribinos por WhatsApp</a
+        >
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer
+      class="bg-black py-6 text-center text-sm text-gray-400"
+      data-aos="fade-up"
+    >
+      © 2025 Iglesia Brazos Abiertos. Todos los derechos reservados.
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init({ once: true, offset: 100, duration: 900 });
+
+      function toggleMenu(btn) {
+        const menu = document.getElementById("mobile-menu");
+        const isOpen = !menu.classList.contains("hidden");
+        menu.classList.toggle("hidden");
+        if (btn) btn.setAttribute("aria-expanded", String(!isOpen));
+      }
+
+      document.addEventListener("click", (e) => {
+        const menu = document.getElementById("mobile-menu");
+        const trigger = document.querySelector(
+          "button[aria-controls='mobile-menu']"
+        );
+        if (!menu || menu.classList.contains("hidden")) return;
+        if (!menu.contains(e.target) && !trigger.contains(e.target)) {
+          menu.classList.add("hidden");
+          trigger.setAttribute("aria-expanded", "false");
+        }
+      });
+    </script>
+  </body>
+</html>
