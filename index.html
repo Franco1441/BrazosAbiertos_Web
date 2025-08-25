@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Sitio web oficial de la iglesia Brazos Abiertos. Conocé nuestras actividades, recursos y cómo participar."
+    />
+    <meta name="author" content="Franco Rotta" />
+    <title>Iglesia Brazos Abiertos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+    <style>
+      @font-face {
+        font-family: "Marsden";
+        src: url("fonts/Marsden-Nr-Bold.otf") format("opentype");
+      }
+      @font-face {
+        font-family: "Stratford";
+        src: url("fonts/StratfordRegular.ttf") format("truetype");
+      }
+      body {
+        font-family: "Helvetica", sans-serif;
+      }
+      .video-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+      }
+      .casa-oracion h2 {
+        font-family: "Marsden", sans-serif;
+      }
+      .casa-oracion .grid {
+        font-family: "Stratford", serif;
+      }
+    </style>
+  </head>
+  <body class="text-white bg-black">
+    <!-- HERO -->
+    <section
+      id="inicio"
+      class="relative w-full flex text-center items-center justify-center min-h-[400px] md:min-h-[800px] overflow-hidden"
+      data-aos="fade-in"
+    >
+      <video autoplay muted loop playsinline class="video-background">
+        <source src="videos/fondo.mp4" type="video/mp4" />
+      </video>
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/100"
+      ></div>
+      <div class="z-10 p-4">
+        <h1 class="text-5xl md:text-6xl font-bold mb-4">BRAZOS ABIERTOS</h1>
+        <p class="text-xl md:text-2xl">UNA COMUNIDAD CON PROPÓSITO</p>
+      </div>
+    </section>
+
+    <!-- HEADER -->
+    <header
+      class="fixed top-0 left-0 w-full bg-black bg-opacity-80 text-white z-20"
+      data-aos="fade-down"
+      data-aos-delay="300"
+    >
+      <nav
+        class="max-w-7xl mx-auto flex justify-between items-center p-4 rounded-xl bg-black bg-opacity-80"
+      >
+        <a
+          href="#inicio"
+          class="flex items-center gap-2 rounded-lg bg-black bg-opacity-60 p-2"
+        >
+          <img src="img/logo.png" alt="Logo" class="h-10 w-auto rounded-full" />
+          <span class="text-xl font-semibold hidden sm:inline"
+            >Brazos Abiertos</span
+          >
+        </a>
+        <ul class="hidden md:flex gap-6">
+          <li><a href="#inicio" class="hover:text-red-500">Inicio</a></li>
+          <li><a href="#nosotros" class="hover:text-red-500">Nosotros</a></li>
+          <li>
+            <a href="#actividades" class="hover:text-red-500">Actividades</a>
+          </li>
+          <li>
+            <a href="#ministerios" class="hover:text-red-500">Ministerios</a>
+          </li>
+          <li><a href="#mensajes" class="hover:text-red-500">Mensajes</a></li>
+          <li><a href="#ofrendas" class="hover:text-red-500">Ofrendas</a></li>
+          <li><a href="#contacto" class="hover:text-red-500">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- SOBRE NOSOTROS -->
+      <section
+        id="nosotros"
+        class="py-20 px-6 bg-black-900 text-center"
+        data-aos="fade-up"
+      >
+        <h2 class="text-5xl font-bold mb-6">Quiénes somos</h2>
+        <p class="max-w-3xl mx-auto text-lg">
+          Somos una iglesia con el deseo de reflejar el amor de Dios y servir a
+          nuestra comunidad. Nuestro propósito es conectar a las personas con
+          Jesús y fomentar una vida llena de fe.
+        </p>
+      </section>
+
+      <!-- ACTIVIDADES -->
+      <section id="actividades" class="py-20 px-6 bg-white text-center">
+        <div data-aos="fade-down">
+          <h2 class="text-5xl font-bold text-black mb-6">Reuniones</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          <div
+            class="bg-red-800 p-6 rounded-lg shadow hover:scale-105 transition"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            Sábados 20:00 - 21:30 hs
+          </div>
+          <div
+            class="bg-red-800 p-6 rounded-lg shadow hover:scale-105 transition"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            Domingos 10:00 - 11:30 hs
+          </div>
+          <div
+            class="bg-red-800 p-6 rounded-lg shadow hover:scale-105 transition"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            Domingos 19:00 - 20:30 hs
+          </div>
+        </div>
+
+    <!-- Dirección -->
+    <div class="mt-12">
+      <p class="text-lg text-black font-medium"
+      data-aos="fade-in"
+      data-aos-delay="600">
+        📍 Corrientes 3621, Santa Fe, Argentina
+      </p>
+    </div>
+
+    <!-- Mapa -->
+    <div class="mt-6 flex justify-center"
+    data-aos="fade-in"
+      data-aos-delay="600">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d853.3317471295604!2d-60.7021235!3d-31.6425223!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b5a99b63b70225%3A0x123456789abcdef!2sCorrientes%203621%2C%20S3002%20Santa%20Fe!5e0!3m2!1ses!2sar!4v1700000000000!5m2!1ses!2sar"
+        width="50%"
+        height="300"
+        style="border-radius: 20px;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>     
+ </section>
+
+      <!-- CASA DE ORACIÓN -->
+      <section
+        class="casa-oracion bg-green-950 text-white py-16 text-center"
+        data-aos="fade-right"
+      >
+        <h2 class="text-6xl font-extrabold mb-10">CASA DE ORACIÓN</h2>
+        <div
+          class="grid grid-cols-2 md:grid-cols-5 gap-8 max-w-6xl mx-auto text-2xl"
+        >
+          <div data-aos="fade-up" data-aos-delay="100">
+            <h3>Lunes</h3>
+            <p>10 a 11:30 H</p>
+            <p>18 a 19:30 H</p>
+          </div>
+          <div data-aos="fade-up" data-aos-delay="200">
+            <h3>Martes</h3>
+            <p>Naciones | Kids</p>
+            <p>18 a 19:30 H</p>
+          </div>
+          <div data-aos="fade-up" data-aos-delay="300">
+            <h3>Miércoles</h3>
+            <p>18 a 19:30 H</p>
+            <p>19:30 a 21 H</p>
+          </div>
+          <div data-aos="fade-up" data-aos-delay="400">
+            <h3>Jueves</h3>
+            <p>10 a 11:30 H</p>
+            <p>18 a 19:30 H</p>
+            <p>19:30 a 21 H</p>
+          </div>
+          <div data-aos="fade-up" data-aos-delay="500">
+            <h3>Viernes</h3>
+            <p>18 a 19:30 H</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- MINISTERIOS -->
+      <section id="ministerios" class="py-20 px-6 bg-gray-100 text-center">
+        <div data-aos="zoom-in">
+          <h2 class="text-5xl font-bold mb-4 text-black">Ministerios</h2>
+        </div>
+
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto"
+        >
+          <a
+            href="fundacion.html"
+            class="block bg-white rounded-xl shadow hover:shadow-lg overflow-hidden transition"
+            data-aos="zoom-in"
+            data-aos-delay="100"
+            ><img src="img/FUNDACION.png" class="w-full h-56 object-cover" />
+            <div class="p-4">
+              <h3 class="text-2xl font-bold text-red-600">Fundación</h3>
+            </div></a
+          >
+          <a
+            href="focus.html"
+            class="block bg-white rounded-xl shadow hover:shadow-lg overflow-hidden transition"
+            data-aos="zoom-in"
+            data-aos-delay="200"
+            ><img src="img/FOCUS.png" class="w-full h-56 object-cover" />
+            <div class="p-4">
+              <h3 class="text-2xl font-bold text-red-600">Focus</h3>
+            </div></a
+          >
+          <a
+            href="plus.html"
+            class="block bg-white rounded-xl shadow hover:shadow-lg overflow-hidden transition"
+            data-aos="zoom-in"
+            data-aos-delay="300"
+            ><img src="img/PLUS.png" class="w-full h-56 object-cover" />
+            <div class="p-4">
+              <h3 class="text-2xl font-bold text-red-600">Plus</h3>
+            </div></a
+          >
+          <a
+            href="Pre.html"
+            class="block bg-white rounded-xl shadow hover:shadow-lg overflow-hidden transition"
+            data-aos="zoom-in"
+            data-aos-delay="400"
+            ><img src="img/Pre.png" class="w-full h-56 object-cover" />
+            <div class="p-4">
+              <h3 class="text-2xl font-bold text-red-600">Pre Adolescentes</h3>
+            </div></a
+          >
+          <a
+            href="BAEM.html"
+            class="block bg-white rounded-xl shadow hover:shadow-lg overflow-hidden transition"
+            data-aos="zoom-in"
+            data-aos-delay="500"
+            ><img src="img/baem.png" class="w-full h-56 object-cover" />
+            <div class="p-4">
+              <h3 class="text-2xl font-bold text-red-600">BAEM</h3>
+            </div></a
+          >
+          <a
+            href="Nexo.html"
+            class="block bg-white rounded-xl shadow hover:shadow-lg overflow-hidden transition"
+            data-aos="zoom-in"
+            data-aos-delay="600"
+            ><img src="img/Recurso 11.png" class="w-full h-56 object-cover" />
+            <div class="p-4">
+              <h3 class="text-2xl font-bold text-red-600">Nexo</h3>
+            </div></a
+          >
+        </div>
+      </section>
+
+      <!-- CDN de Swiper -->
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+      <!-- MENSAJES -->
+      <section id="mensajes" class="py-20 px-6 bg-black-100" data-aos="fade-up">
+        <h2 class="text-5xl font-bold mb-4 text-center text-white">Mensajes</h2>
+        <p class="text-center max-w-2xl mx-auto mb-12 text-white-700">
+          Disfrutá de nuestros contenidos semanales: un Podcast para crecer en
+          la fe y la Predica de fin de semana.
+        </p>
+        <div class="flex justify-center mb-8">
+          <a
+            href="https://www.youtube.com/@BrazosAbiertosiglesia/featured"
+            target="_blank"
+            class="bg-red-600 text-white py-2 px-4 rounded hover:bg-red-700 transition inline-block"
+          >
+            Ir al Youtube
+          </a>
+        </div>
+        <!-- Podcast -->
+        <div class="mb-12">
+          <h3 class="text-3xl font-semibold mb-6 text-white-800 text-center">
+            Podcast
+          </h3>
+          <div class="swiper podcast-swiper">
+            <div class="swiper-wrapper">
+              <!-- Video 0 -->
+              <div class="swiper-slide">
+                <iframe
+                  class="w-full h-64 rounded-lg shadow-lg"
+                  src="https://www.youtube.com/embed/nmLKSQFfagU"
+                  frameborder="0"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <!-- Video 1 -->
+              <div class="swiper-slide">
+                <iframe
+                  class="w-full h-64 rounded-lg shadow-lg"
+                  src="https://www.youtube.com/embed/nqOLPORFXlY"
+                  frameborder="0"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <!-- Video 2 -->
+              <div class="swiper-slide">
+                <iframe
+                  class="w-full h-64 rounded-lg shadow-lg"
+                  src="https://www.youtube.com/embed/p9w_J7G7Kok"
+                  frameborder="0"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <!-- Video 3 -->
+              <div class="swiper-slide">
+                <iframe
+                  class="w-full h-64 rounded-lg shadow-lg"
+                  src="https://www.youtube.com/embed/n8f_zXSf4N0"
+                  frameborder="0"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+            <!-- Botones -->
+            <div class="swiper-button-next text-black"></div>
+            <div class="swiper-button-prev text-black"></div>
+          </div>
+        </div>
+        <!-- Predica -->
+        <div>
+          <h3 class="text-3xl font-semibold mb-6 text-white-800 text-center">
+            Predica de Fin de Semana
+          </h3>
+          <div class="swiper predica-swiper">
+            <div class="swiper-wrapper">
+              <!-- Video 0 -->
+              <div class="swiper-slide">
+                <iframe
+                  class="w-full h-64 rounded-lg shadow-lg"
+                  src="https://www.youtube.com/embed/2WNNBxL4Z4Y"
+                  frameborder="0"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <!-- Video 1 -->
+              <div class="swiper-slide">
+                <iframe
+                  class="w-full h-64 rounded-lg shadow-lg"
+                  src="https://www.youtube.com/embed/3iLo8WxxOGw"
+                  frameborder="0"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <!-- Video 2 -->
+              <div class="swiper-slide">
+                <iframe
+                  class="w-full h-64 rounded-lg shadow-lg"
+                  src="https://www.youtube.com/embed/OmYOQYqqjaA?si=A8MsozL2pfr3UQs-"
+                  frameborder="0"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <!-- Video 3 -->
+              <div class="swiper-slide">
+                <iframe
+                  class="w-full h-64 rounded-lg shadow-lg"
+                  src="https://www.youtube.com/embed/eClc4_MtGvc"
+                  frameborder="0"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+            <!-- Botones -->
+            <div class="swiper-button-next text-black"></div>
+            <div class="swiper-button-prev text-black"></div>
+          </div>
+        </div>
+      </section>
+      <!-- Inicialización de Swiper -->
+      <script>
+        const podcastSwiper = new Swiper(".podcast-swiper", {
+          slidesPerView: 1,
+          spaceBetween: 20,
+          navigation: {
+            nextEl: ".podcast-swiper .swiper-button-next",
+            prevEl: ".podcast-swiper .swiper-button-prev",
+          },
+          breakpoints: {
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+          },
+        });
+        const predicaSwiper = new Swiper(".predica-swiper", {
+          slidesPerView: 1,
+          spaceBetween: 20,
+          navigation: {
+            nextEl: ".predica-swiper .swiper-button-next",
+            prevEl: ".predica-swiper .swiper-button-prev",
+          },
+          breakpoints: {
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+          },
+        });
+      </script>
+
+      <!-- OFRENDAS -->
+      <section
+        id="ofrendas"
+        class="py-16 px-6 text-center bg-red-900 text-white"
+        data-aos="fade-right"
+      >
+        <p class="text-3xl font-semibold mb-4">Damos de lo que recibimos</p>
+        <h2 class="text-5xl font-bold mb-6">Ofrendas</h2>
+        <p class="text-xl mb-2">Alias: BRAZOS.ABIERTOS.FUND</p>
+        <button
+          onclick="copiarAlias()"
+          class="bg-white text-red-600 font-bold px-6 py-3 rounded-full hover:bg-gray-200 transition"
+        >
+          Copiar Alias
+        </button>
+      </section>
+
+      <!-- CONTACTO -->
+
+      <section id="contacto" class="py-20 px-6 bg-black text-center">
+        <h2 class="text-5xl font-bold mb-6">Contacto</h2>
+        <p class="mb-4">
+          Estamos para escucharte. Envianos tu mensaje o visita nuestras redes.
+        </p>
+        <form
+          action="https://formspree.io/f/mayvlrzo"
+          method="POST"
+          class="max-w-xl mx-auto text-left"
+        >
+          <label class="block mb-2"
+            >Nombre:
+            <input
+              type="text"
+              name="nombre"
+              required
+              class="w-full p-2 rounded text-black"
+            />
+          </label>
+          <label class="block mb-2"
+            >Email:
+            <input
+              type="email"
+              name="email"
+              required
+              class="w-full p-2 rounded text-black"
+            />
+          </label>
+          <label class="block mb-4"
+            >Mensaje:
+            <textarea
+              name="mensaje"
+              rows="4"
+              required
+              class="w-full p-2 rounded text-black"
+            ></textarea>
+          </label>
+          <button
+            type="submit"
+            class="bg-red-800 hover:bg-red-500 px-6 py-2 rounded text-white transition"
+          >
+            Enviar
+          </button>
+        </form>
+        <div class="mt-6">
+          <a href="https://wa.me/+5493425178705" class="text-red-500 underline"
+            >Escribinos por WhatsApp</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <footer
+      class="bg-black py-6 text-center text-sm text-white-400"
+      data-aos="fade-up"
+    >
+      © 2025 Iglesia Brazos Abiertos. Todos los derechos reservados.
+    </footer>
+
+    <script>
+      AOS.init({ duration: 1000, once: true });
+      function copiarAlias() {
+        const alias = "BRAZOS.ABIERTOS.FUND";
+        navigator.clipboard
+          .writeText(alias)
+          .then(() => alert("Alias copiado al portapapeles"));
+      }
+    </script>
+  </body>
+</html>
