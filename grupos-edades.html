@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grupos de Edades - Brazos Abiertos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <style>
+      @font-face {
+        font-family: "Marsden";
+        src: url("fonts/Marsden-Nr-Bold.otf") format("opentype");
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: "Marsden", sans-serif;
+      }
+      .text-red-800-custom {
+        color: #991b1b;
+      }
+      /* Estilos para el Modal */
+      .modal {
+        display: none; /* Oculto por defecto */
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(5px);
+      }
+      .modal-content {
+        margin: 5% auto; /* 5% arriba y centrado */
+        width: 90%;
+        max-width: 800px;
+        animation-name: animatetop;
+        animation-duration: 0.4s;
+      }
+      @keyframes animatetop {
+        from {
+          top: -300px;
+          opacity: 0;
+        }
+        to {
+          top: 0;
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-black text-white">
+    <header class="bg-black text-white p-4 shadow-md sticky top-0 z-50">
+      <nav class="max-w-6xl mx-auto flex justify-between items-center">
+        <a
+          href="index.html#edades"
+          class="text-xl font-bold hover:text-red-500 transition"
+          >← Volver</a
+        >
+        <h1 class="text-2xl font-bold">Grupos de Edades</h1>
+      </nav>
+    </header>
+
+    <section
+      class="py-16 md:py-24 px-6 text-center bg-white"
+      data-aos="fade-in"
+    >
+      <h2 class="text-6xl font-extrabold mb-4 text-black">
+        EDADES BRAZOS ABIERTOS
+      </h2>
+      <p class="text-xl max-w-3xl mx-auto text-gray-700">
+        Descubrí el grupo que mejor se adapta a tu edad, donde podrás crecer en
+        fe y formar relaciones significativas.
+      </p>
+    </section>
+
+    <section class="py-16 md:py-20 px-6 max-w-6xl mx-auto bg-black">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div
+          class="bg-white rounded-xl shadow-2xl overflow-hidden transform hover:scale-[1.02] transition duration-300"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          <img
+            src="img/LOGO MINI JUNIOR.png"
+            alt="Niños en la iglesia"
+            class="w-full h-56 object-cover"
+            onerror="this.onerror=null;this.src='img/image_15a30c.png';"
+          />
+          <div class="p-6">
+            <h3 class="text-3xl font-bold mb-2 text-black">
+              Niños (3 a 5 años)
+            </h3>
+            <p class="text-gray-700 mb-4">
+              Un espacio divertido y seguro para que los más pequeños aprendan
+              de Jesús a través de juegos, música y enseñanzas creativas.
+            </p>
+            <button
+              onclick="openModal('ninosModal')"
+              class="text-red-800-custom hover:text-red-500 font-bold transition"
+            >
+              Conocé más →
+            </button>
+          </div>
+        </div>
+
+        <div
+          class="bg-white rounded-xl shadow-2xl overflow-hidden transform hover:scale-[1.02] transition duration-300"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          <img
+            src="img/gpre.jpg"
+            alt="Grupo de pre-adolescentes"
+            class="w-full h-56 object-cover"
+            onerror="this.onerror=null;this.src='img/image_15a042.png';"
+          />
+          <div class="p-6">
+            <h3 class="text-3xl font-bold mb-2 text-black">
+              Pre-adolescentes (12 a 14 años)
+            </h3>
+            <p class="text-gray-700 mb-4">
+              El lugar para hacer amigos y explorar preguntas importantes sobre
+              la fe en una etapa de grandes cambios.
+            </p>
+            <div class="flex justify-between items-center mt-4">
+              <button
+                onclick="openModal('preadolescentesModal')"
+                class="text-red-800-custom hover:text-red-500 font-bold transition"
+              >
+                Conocé más →
+              </button>
+              <a
+                href="https://www.instagram.com/generacionpre.ba/"
+                target="_blank"
+                class="text-pink-600 hover:text-red-500 text-3xl transition"
+                aria-label="Instagram de Generación Pre"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-white rounded-xl shadow-2xl overflow-hidden transform hover:scale-[1.02] transition duration-300"
+          data-aos="fade-up"
+          data-aos-delay="300"
+        >
+          <img
+            src="img/FOCUS.png"
+            alt="Grupo de adolescentes"
+            class="w-full h-56 object-cover"
+            onerror="this.onerror=null;this.src='img/image_15987f.png';"
+          />
+          <div class="p-6">
+            <h3 class="text-3xl font-bold mb-2 text-black">
+              Adolescentes (15 a 17 años)
+            </h3>
+            <p class="text-gray-700 mb-4">
+              Desafíos, risas y crecimiento. Un espacio para jóvenes que quieren
+              vivir su fe con pasión y propósito.
+            </p>
+            <div class="flex justify-between items-center mt-4">
+              <button
+                onclick="openModal('adolescentesModal')"
+                class="text-red-800-custom hover:text-red-500 font-bold transition"
+              >
+                Conocé más →
+              </button>
+              <a
+                href="https://www.instagram.com/focuss.ok/"
+                target="_blank"
+                class="text-pink-600 hover:text-red-500 text-3xl transition"
+                aria-label="Instagram de Focus"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-white rounded-xl shadow-2xl overflow-hidden transform hover:scale-[1.02] transition duration-300"
+          data-aos="fade-up"
+          data-aos-delay="400"
+        >
+          <img
+            src="img/Recurso 11.png"
+            alt="Grupo de jóvenes"
+            class="w-full h-56 object-cover"
+            onerror="this.onerror=null;this.src='img/Recurso 11.png';"
+          />
+          <div class="p-6">
+            <h3 class="text-3xl font-bold mb-2 text-black">
+              Jóvenes (18 a 35 años)
+            </h3>
+            <p class="text-gray-700 mb-4">
+              Comunidad para la vida universitaria y primeros trabajos.
+              Desarrollá tu liderazgo y forjá tu identidad.
+            </p>
+            <div class="flex justify-between items-center mt-4">
+              <button
+                onclick="openModal('jovenesModal')"
+                class="text-red-800-custom hover:text-red-500 font-bold transition"
+              >
+                Conocé más →
+              </button>
+              <a
+                href="https://www.instagram.com/nexo.ok/"
+                target="_blank"
+                class="text-pink-600 hover:text-red-500 text-3xl transition"
+                aria-label="Instagram de Nexo"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-white rounded-xl shadow-2xl overflow-hidden transform hover:scale-[1.02] transition duration-300"
+          data-aos="fade-up"
+          data-aos-delay="500"
+        >
+          <img
+            src="img/PLUS.png"
+            alt="Grupo de adultos jóvenes"
+            class="w-full h-56 object-cover"
+            onerror="this.onerror=null;this.src='img/PLUS.png';"
+          />
+          <div class="p-6">
+            <h3 class="text-3xl font-bold mb-2 text-black">
+              Jóvenes mayores (+35 años)
+            </h3>
+            <p class="text-gray-700 mb-4">
+              Un espacio para profesionales, parejas y solteros que buscan
+              crecer en comunidad y equilibrio.
+            </p>
+            <div class="flex justify-between items-center mt-4">
+              <button
+                onclick="openModal('jovenesMayoresModal')"
+                class="text-red-800-custom hover:text-red-500 font-bold transition"
+              >
+                Conocé más →
+              </button>
+              <a
+                href="https://www.instagram.com/plus.ook/"
+                target="_blank"
+                class="text-pink-600 hover:text-red-500 text-3xl transition"
+                aria-label="Instagram de Plus"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-white rounded-xl shadow-2xl overflow-hidden transform hover:scale-[1.02] transition duration-300"
+          data-aos="fade-up"
+          data-aos-delay="600"
+        >
+          <img
+            src="img/LOGO Aguilas.png"
+            alt="Grupo de adultos"
+            class="w-full h-56 object-cover"
+            onerror="this.onerror=null;this.src='img/LOGO Aguilas.png';"
+          />
+          <div class="p-6">
+            <h3 class="text-3xl font-bold mb-2 text-black">
+              Adultos mayores (+65 años)
+            </h3>
+            <p class="text-gray-700 mb-4">
+              Comunidad para adultos que desean impactar su entorno con madurez
+              y el amor de Jesús.
+            </p>
+            <button
+              onclick="openModal('adultosMayoresModal')"
+              class="text-red-800-custom hover:text-red-500 font-bold transition"
+            >
+              Conocé más →
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-black py-6 text-center text-sm text-white">
+      © 2025 Iglesia Brazos Abiertos. Todos los derechos reservados.
+    </footer>
+
+    <div id="ninosModal" class="modal">
+      <div class="modal-content bg-white rounded-xl shadow-2xl p-6 md:p-10">
+        <div class="flex justify-between items-start mb-4">
+          <h2 class="text-4xl font-extrabold text-red-800-custom">
+            Niños (3 a 5 años)
+          </h2>
+          <span
+            onclick="closeModal('ninosModal')"
+            class="text-black text-4xl font-light cursor-pointer hover:text-red-500"
+            >&times;</span
+          >
+        </div>
+        <img
+          src="img/LOGO MINI JUNIOR.png"
+          alt="Grupo Niños"
+          class="w-full h-80 object-cover rounded-lg mb-6"
+        />
+
+        <h3 class="text-2xl font-bold mb-2 text-black">
+          ¡Descubriendo a Jesús!
+        </h3>
+        <p class="text-gray-700 mb-4">
+          Nuestro ministerio infantil se enfoca en sembrar las primeras semillas
+          de fe. A través de cuentos, juegos sensoriales y alabanza, los niños
+          de 3 a 5 años aprenden los fundamentos del amor de Dios en un entorno
+          seguro y estimulante. Queremos que cada niño sepa que es amado y que
+          Jesús es su mejor amigo.
+        </p>
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 gap-4 text-black border-t pt-4"
+        >
+          <div>
+            <p class="font-bold text-lg">🗓️ Días y Horarios:</p>
+            <p>
+              Sabados 20:00 hs y Domingos 10:00 hs y 20:00 hs (Paralelo a las
+              Reuniones generales).
+            </p>
+          </div>
+          <div>
+            <p class="font-bold text-lg">📍 Ubicación:</p>
+            <p>Salón de Niños.</p>
+          </div>
+        </div>
+        <a
+          href="index.html#contacto"
+          class="block w-full text-center mt-6 bg-[#991b1b] text-white font-bold py-3 rounded-lg hover:bg-red-800-custom transition"
+          >Contactar Líderes</a
+        >
+      </div>
+    </div>
+
+    <div id="preadolescentesModal" class="modal">
+      <div class="modal-content bg-white rounded-xl shadow-2xl p-6 md:p-10">
+        <div class="flex justify-between items-start mb-4">
+          <h2 class="text-4xl font-extrabold text-red-800-custom">
+            Pre-adolescentes (12 a 14 años)
+          </h2>
+          <span
+            onclick="closeModal('preadolescentesModal')"
+            class="text-black text-4xl font-light cursor-pointer hover:text-red-500"
+            >&times;</span
+          >
+        </div>
+        <img
+          src="img/gpre.jpg"
+          alt="Grupo Pre-adolescentes"
+          class="w-full h-80 object-cover rounded-lg mb-6"
+        />
+
+        <h3 class="text-2xl font-bold mb-2 text-black">
+          Un ahora, un tiempo, una generación.
+        </h3>
+        <p class="text-gray-700 mb-4">
+          En esta etapa crucial de identidad, nos enfocamos en responder las
+          dudas de la pre-adolescencia con la verdad bíblica. Fomentamos la
+          amistad, la aceptación y la exploración de sus dones espirituales,
+          creando un ambiente donde se sientan escuchados y valorados.
+        </p>
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 gap-4 text-black border-t pt-4"
+        >
+          <div>
+            <p class="font-bold text-lg">🗓️ Días y Horarios:</p>
+            <p>Sabados 10:00 hs.</p>
+          </div>
+          <div>
+            <p class="font-bold text-lg">📍 Ubicación:</p>
+            <p>Auditorio Casa de oración</p>
+          </div>
+        </div>
+        <a
+          href="index.html#contacto"
+          class="block w-full text-center mt-6 bg-[#991b1b] text-white font-bold py-3 rounded-lg hover:bg-red-800-custom transition"
+          >Contactar Líderes</a
+        >
+      </div>
+    </div>
+
+    <div id="adolescentesModal" class="modal">
+      <div class="modal-content bg-white rounded-xl shadow-2xl p-6 md:p-10">
+        <div class="flex justify-between items-start mb-4">
+          <h2 class="text-4xl font-extrabold text-red-800-custom">
+            Adolescentes (15 a 17 años)
+          </h2>
+          <span
+            onclick="closeModal('adolescentesModal')"
+            class="text-black text-4xl font-light cursor-pointer hover:text-red-500"
+            >&times;</span
+          >
+        </div>
+        <img
+          src="img/FOCUS.png"
+          alt="Grupo Adolescentes"
+          class="w-full h-80 object-cover rounded-lg mb-6"
+        />
+
+        <h3 class="text-2xl font-bold mb-2 text-black">
+          Enfocados en lo eterno y en nuestro entorno.
+        </h3>
+        <p class="text-gray-700 mb-4">
+          Un ambiente lleno de energía para adolescentes que quieren profundizar
+          su relación con Dios y enfrentar los desafíos de la secundaria.
+          Desarrollamos liderazgo, servicio y discipulado práctico, ayudándolos
+          a vivir su fe con pasión y propósito en el mundo.
+        </p>
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 gap-4 text-black border-t pt-4"
+        >
+          <div>
+            <p class="font-bold text-lg">🗓️ Días y Horarios:</p>
+            <p>Sábados 17:30 hs.</p>
+          </div>
+          <div>
+            <p class="font-bold text-lg">📍 Ubicación:</p>
+            <p>Auditorio Casa de oración</p>
+          </div>
+        </div>
+        <a
+          href="index.html#contacto"
+          class="block w-full text-center mt-6 bg-[#991b1b] text-white font-bold py-3 rounded-lg hover:bg-red-800-custom transition"
+          >Contactar Líderes</a
+        >
+      </div>
+    </div>
+
+    <div id="jovenesModal" class="modal">
+      <div class="modal-content bg-white rounded-xl shadow-2xl p-6 md:p-10">
+        <div class="flex justify-between items-start mb-4">
+          <h2 class="text-4xl font-extrabold text-red-800-custom">
+            Jóvenes (18 a 35 años)
+          </h2>
+          <span
+            onclick="closeModal('jovenesModal')"
+            class="text-black text-4xl font-light cursor-pointer hover:text-red-500"
+            >&times;</span
+          >
+        </div>
+        <img
+          src="img/Recurso 11.png"
+          alt="Grupo Jóvenes"
+          class="w-full h-80 object-cover rounded-lg mb-6"
+        />
+
+        <h3 class="text-2xl font-bold mb-2 text-black">Nexo Nite</h3>
+        <p class="text-gray-700 mb-4">
+          Esta es la comunidad para jóvenes adultos (universitarios,
+          profesionales y jóvenes matrimonios). Exploramos cómo llevar la fe al
+          ámbito laboral, académico y social. Fomentamos el desarrollo de
+          talentos y el servicio ministerial, ayudándote a forjar tu identidad
+          en Cristo.
+        </p>
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 gap-4 text-black border-t pt-4"
+        >
+          <div>
+            <p class="font-bold text-lg">🗓️ Días y Horarios:</p>
+            <p>Último viernes de cada mes 19:30 hs.</p>
+          </div>
+          <div>
+            <p class="font-bold text-lg">📍 Ubicación:</p>
+            <p>Auditorio General.</p>
+          </div>
+        </div>
+        <a
+          href="index.html#contacto"
+          class="block w-full text-center mt-6 bg-[#991b1b] text-white font-bold py-3 rounded-lg hover:bg-red-800-custom transition"
+          >Contactar Líderes</a
+        >
+      </div>
+    </div>
+
+    <div id="jovenesMayoresModal" class="modal">
+      <div class="modal-content bg-white rounded-xl shadow-2xl p-6 md:p-10">
+        <div class="flex justify-between items-start mb-4">
+          <h2 class="text-4xl font-extrabold text-red-800-custom">
+            Jóvenes mayores (+35 años)
+          </h2>
+          <span
+            onclick="closeModal('jovenesMayoresModal')"
+            class="text-black text-4xl font-light cursor-pointer hover:text-red-500"
+            >&times;</span
+          >
+        </div>
+        <img
+          src="img/PLUS.png"
+          alt="Grupo Jóvenes Mayores"
+          class="w-full h-80 object-cover rounded-lg mb-6"
+        />
+
+        <h3 class="text-2xl font-bold mb-2 text-black">Plus</h3>
+        <p class="text-gray-700 mb-4">
+          Dirigido a adultos que están estableciendo familias y carreras.
+          Ofrecemos talleres y grupos de vida para fortalecer el matrimonio, la
+          crianza de hijos y el impacto en la sociedad desde su vocación. Un
+          espacio de apoyo para lograr equilibrio y crecimiento maduro.
+        </p>
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 gap-4 text-black border-t pt-4"
+        >
+          <div>
+            <p class="font-bold text-lg">🗓️ Días y Horarios:</p>
+            <p>Una vez al mes.</p>
+          </div>
+          <div>
+            <p class="font-bold text-lg">📍 Ubicación:</p>
+            <p>Diferentes puntos de la ciudad.</p>
+          </div>
+        </div>
+        <a
+          href="index.html#contacto"
+          class="block w-full text-center mt-6 bg-[#991b1b] text-white font-bold py-3 rounded-lg hover:bg-red-800-custom transition"
+          >Contactar Líderes</a
+        >
+      </div>
+    </div>
+
+    <div id="adultosMayoresModal" class="modal">
+      <div class="modal-content bg-white rounded-xl shadow-2xl p-6 md:p-10">
+        <div class="flex justify-between items-start mb-4">
+          <h2 class="text-4xl font-extrabold text-red-800-custom">
+            Adultos mayores (+65 años)
+          </h2>
+          <span
+            onclick="closeModal('adultosMayoresModal')"
+            class="text-black text-4xl font-light cursor-pointer hover:text-red-500"
+            >&times;</span
+          >
+        </div>
+        <img
+          src="img/LOGO Aguilas.png"
+          alt="Grupo Adultos Mayores"
+          class="w-full h-80 object-cover rounded-lg mb-6"
+        />
+
+        <h3 class="text-2xl font-bold mb-2 text-black">Legado de Fe</h3>
+        <p class="text-gray-700 mb-4">
+          Nuestro grupo para adultos mayores, donde la experiencia se convierte
+          en mentoría. Un espacio de compañerismo, oración y servicio, centrado
+          en dejar un legado espiritual a las nuevas generaciones y disfrutar de
+          una comunidad activa.
+        </p>
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 gap-4 text-black border-t pt-4"
+        >
+          <div>
+            <p class="font-bold text-lg">🗓️ Días y Horarios:</p>
+            <p>Una vez al mes.</p>
+          </div>
+          <div>
+            <p class="font-bold text-lg">📍 Ubicación:</p>
+            <p>Auditorio General.</p>
+          </div>
+        </div>
+        <a
+          href="index.html#contacto"
+          class="block w-full text-center mt-6 bg-[#991b1b] text-white font-bold py-3 rounded-lg hover:bg-red-800-custom transition"
+          >Contactar Líderes</a
+        >
+      </div>
+    </div>
+
+    <script>
+      AOS.init({ duration: 800, once: true });
+
+      // Función para abrir el modal
+      function openModal(modalId) {
+        document.getElementById(modalId).style.display = "block";
+        document.body.style.overflow = "hidden"; // Deshabilita el scroll del fondo
+      }
+
+      // Función para cerrar el modal
+      function closeModal(modalId) {
+        document.getElementById(modalId).style.display = "none";
+        document.body.style.overflow = "auto"; // Habilita el scroll del fondo
+      }
+
+      // Cierra el modal si el usuario hace clic fuera de él
+      window.onclick = function (event) {
+        const modals = document.querySelectorAll(".modal");
+        modals.forEach((modal) => {
+          if (event.target == modal) {
+            modal.style.display = "none";
+            document.body.style.overflow = "auto";
+          }
+        });
+      };
+    </script>
+  </body>
+</html>

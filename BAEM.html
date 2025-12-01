@@ -10,11 +10,14 @@
     <meta name="author" content="Franco Rotta" />
     <title>BAEM — Brazos Abiertos</title>
 
-    <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- AOS -->
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
 
     <style>
       @font-face {
@@ -43,18 +46,14 @@
     </style>
   </head>
   <body class="text-white bg-black">
-    <!-- HEADER -->
     <header
-      class="fixed top-0 left-0 w-full bg-opacity-90 text-white z-20"
+      class="fixed top-0 left-0 w-full bg-opacity-80 text-white z-20"
       data-aos="fade-down"
     >
       <nav
         class="max-w-7xl mx-auto flex justify-between items-center p-4 rounded-xl bg-black bg-opacity-90"
       >
-        <a
-          href="index.html"
-          class="flex items-center gap-2 rounded-lg bg-black bg-opacity-60 p-2"
-        >
+        <a href="index.html" class="flex items-center gap-2 rounded-lg p-2">
           <img src="img/logo.png" alt="Logo" class="h-10 w-auto rounded-full" />
           <span class="text-xl font-semibold hidden sm:inline"
             >Brazos Abiertos</span
@@ -114,7 +113,6 @@
       </nav>
     </header>
 
-    <!-- HERO -->
     <section
       id="inicio"
       class="relative h-screen flex items-center justify-center text-center"
@@ -137,7 +135,6 @@
       </div>
     </section>
 
-    <!-- INSCRIPCIONES -->
     <section
       class="relative w-full flex items-center justify-center min-h-[300px] md:min-h-[500px] lg:min-h-[800px] overflow-hidden bg-[#e8dfd7]"
     >
@@ -148,7 +145,6 @@
       />
     </section>
 
-    <!-- PROPÓSITO -->
     <section id="proposito" class="py-20 px-6 bg-[#e8dfd7] text-center">
       <h2 class="text-6xl text-[#5882be] font-bold mb-6">Propósito y Visión</h2>
       <p class="max-w-4xl text-[#5882be] mx-auto text-2xl leading-relaxed">
@@ -159,7 +155,6 @@
       </p>
     </section>
 
-    <!-- MATERIAS -->
     <section id="materias" class="py-20 px-6 bg-black" data-aos="fade-up">
       <h2 class="text-4xl font-bold mb-12 text-center">Materias</h2>
       <div
@@ -236,8 +231,8 @@
       </div>
     </section>
 
-    <!-- SECCIÓN FOTO + BOTONES -->
     <section
+      id="inscripciones"
       class="relative w-full flex items-center justify-center min-h-[400px] md:min-h-[600px] overflow-hidden"
     >
       <img
@@ -265,7 +260,6 @@
       </div>
     </section>
 
-    <!-- PLAN DE ESTUDIO -->
     <section id="plan-estudio" class="py-20 px-6 bg-white text-center">
       <h2 class="text-4xl text-black font-bold mb-12">Plan de estudio</h2>
       <div class="max-w-5xl mx-auto space-y-8">
@@ -284,7 +278,6 @@
       </div>
     </section>
 
-    <!-- MODALIDAD Y CRONOGRAMA -->
     <section
       id="modalidad"
       class="py-20 px-6 bg-black text-center"
@@ -294,11 +287,10 @@
       <div
         class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 text-left"
       >
-        <!-- Modalidad -->
         <div
           class="bg-[#eda9f4] p-8 rounded-lg shadow-lg hover:scale-105 transition"
         >
-          <h3 class="text-2xl font-semibold mb-4 text-white">Modalidad</h3>
+          <h3 class="text-2xl font-semibold mb-4 text-black">Modalidad</h3>
           <p class="text-black font-semibold leading-relaxed">
             Clases presenciales en las instalaciones de Iglesia Brazos Abiertos.
             <br /><br />
@@ -307,7 +299,6 @@
           </p>
         </div>
 
-        <!-- Cronograma -->
         <div
           class="bg-[#5e7cbe] p-8 rounded-lg shadow-lg hover:scale-105 transition"
         >
@@ -324,7 +315,6 @@
       </div>
     </section>
 
-    <!-- CONTACTO -->
     <section
       id="contacto"
       class="py-20 px-6 bg-black text-center"
@@ -332,18 +322,24 @@
     >
       <h2 class="text-5xl font-bold mb-6">Contacto</h2>
       <p class="mb-4">
-        Estamos para escucharte. Envianos tu mensaje o visita nuestras redes.
+        Estamos para escucharte. Envianos tu mensaje por WhatsApp o visitá
+        nuestro Instagram:
+        <a
+          href="https://www.instagram.com/baem.escuela/"
+          target="_blank"
+          class="text-pink-500 hover:text-pink-400 font-bold underline transition"
+          aria-label="Instagram de BAEM"
+        >
+          <i class="fab fa-instagram"></i> @baem.escuela
+        </a>
       </p>
-      <form
-        action="https://formspree.io/f/mayvlrzo"
-        method="POST"
-        class="max-w-xl mx-auto text-left"
-      >
+      <form id="whatsapp-form" class="max-w-xl mx-auto text-left">
         <label class="block mb-2"
           >Nombre:
           <input
             type="text"
             name="nombre"
+            id="nombre"
             required
             class="w-full p-2 rounded text-black"
           />
@@ -353,6 +349,7 @@
           <input
             type="email"
             name="email"
+            id="email"
             required
             class="w-full p-2 rounded text-black"
           />
@@ -361,6 +358,7 @@
           >Mensaje:
           <textarea
             name="mensaje"
+            id="mensaje"
             rows="4"
             required
             class="w-full p-2 rounded text-black"
@@ -368,27 +366,31 @@
         </label>
         <button
           type="submit"
-          class="bg-red-800 hover:bg-red-500 px-6 py-2 rounded text-white transition"
+          class="bg-green-600 hover:bg-green-700 px-6 py-3 rounded text-white transition w-full flex items-center justify-center space-x-2 font-bold"
         >
-          Enviar
+          <i class="fab fa-whatsapp text-xl"></i>
+          <span>Enviar Mensaje por WhatsApp</span>
         </button>
       </form>
-      <div class="mt-6">
-        <a href="https://wa.me/XXXXXXXXXXX" class="text-red-500 underline"
-          >Escribinos por WhatsApp</a
-        >
-      </div>
     </section>
 
-    <!-- FOOTER -->
     <footer
-      class="bg-black py-6 text-center text-sm text-gray-400"
+      class="bg-black py-8 px-6 text-center text-sm text-gray-400"
       data-aos="fade-up"
     >
+      <div class="mb-4 space-x-6 text-2xl">
+        <a
+          href="https://www.instagram.com/baem.escuela/"
+          target="_blank"
+          class="text-gray-400 hover:text-pink-500 transition"
+          aria-label="Instagram de BAEM"
+        >
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
       © 2025 Iglesia Brazos Abiertos. Todos los derechos reservados.
     </footer>
 
-    <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script>
       AOS.init({ once: true, offset: 100, duration: 900 });
@@ -411,6 +413,46 @@
           trigger.setAttribute("aria-expanded", "false");
         }
       });
+
+      // Script para Formulario de WhatsApp
+      document
+        .getElementById("whatsapp-form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Evita el envío tradicional del formulario
+
+          const nombre = document.getElementById("nombre").value;
+          const email = document.getElementById("email").value;
+          const mensaje = document.getElementById("mensaje").value;
+
+          // Número de WhatsApp (usando el mismo número que tenías)
+          const phoneNumber = "5493425178705";
+
+          // Construye el mensaje
+          const whatsappMessage = `
+*Mensaje de Contacto BAEM - Web:*
+
+Hola, mi nombre es ${nombre}.
+Mi correo es: ${email}
+Estoy consultando sobre BAEM.
+El mensaje que quiero enviarles es el siguiente:
+
+"${mensaje}"
+
+¡Gracias!
+        `;
+
+          // Codifica el mensaje para que sea seguro en la URL
+          const encodedMessage = encodeURIComponent(whatsappMessage.trim());
+
+          // Construye el enlace de WhatsApp
+          const whatsappUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`;
+
+          // Abre WhatsApp en una nueva pestaña o ventana
+          window.open(whatsappUrl, "_blank");
+
+          // Limpiar el formulario
+          this.reset();
+        });
     </script>
   </body>
 </html>

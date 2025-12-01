@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ROOM - Escuela de Adoración</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      html,
+      body {
+        overflow-x: hidden;
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+        font-family: "Inter", sans-serif;
+      }
+
+      /* Utilidad para el efecto de texto en la sección diagonal */
+      .blend-difference {
+        mix-blend-mode: difference;
+        color: white;
+      }
+
+      /* Utilidad para la línea separadora y el logo */
+      .separator {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem 0;
+        gap: 1rem;
+        color: inherit;
+        width: 100%;
+      }
+      .line {
+        height: 2px;
+        background-color: currentColor;
+        width: 40px;
+        min-width: 40px; /* Evita que la línea desaparezca */
+      }
+
+      /* Clase para invertir el color del logo PNG en fondos oscuros */
+      .icon-invert {
+        filter: invert(1);
+      }
+    </style>
+
+    <!-- HEADER -->
+    <header
+      class="fixed top-0 left-0 w-full bg-opacity-80 text-white z-20"
+      data-aos="fade-down"
+    >
+      <nav
+        class="max-w-7xl mx-auto flex justify-between items-center p-4 rounded-xl bg-black bg-opacity-90"
+      >
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center gap-2 rounded-lg p-2">
+          <img src="img/logo.png" alt="Logo" class="h-10 w-auto rounded-full" />
+          <span class="text-xl font-semibold hidden sm:inline"
+            >Brazos Abiertos</span
+          >
+        </a>
+
+        <button
+          class="md:hidden focus:outline-none"
+          onclick="toggleMenu(this)"
+          aria-label="Abrir menú"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <svg
+            class="w-7 h-7"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+        <ul
+          id="mobile-menu"
+          class="hidden absolute top-full left-0 w-full bg-black/95 md:static md:flex md:w-auto md:bg-transparent flex-col gap-2 p-4 md:flex-row md:gap-6 md:p-0"
+        >
+          <li>
+            <a href="#inicio" class="block py-2 px-4 hover:text-red-500"
+              >Inicio</a
+            >
+          </li>
+          <li>
+            <a href="#proposito" class="block py-2 px-4 hover:text-red-500"
+              >Propósito</a
+            >
+          </li>
+          <li>
+            <a href="#materias" class="block py-2 px-4 hover:text-red-500"
+              >Materias</a
+            >
+          </li>
+          <li>
+            <a href="#inscripciones" class="block py-2 px-4 hover:text-red-500"
+              >Inscripciones</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+  </head>
+  <body class="bg-white text-black selection:bg-black selection:text-white">
+    <section
+      id="inicio"
+      class="relative min-h-screen flex flex-col items-center justify-center pt-20 pb-10 w-full overflow-hidden"
+    >
+      <div class="absolute top-0 left-0 w-full overflow-hidden leading-none">
+        <svg
+          class="relative block w-full h-[100px] md:h-[150px]"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path d="M0,0 H1200 V50 Q600 150 0 50 Z" fill="black"></path>
+        </svg>
+      </div>
+
+      <div class="container mx-auto px-4 md:px-6 text-center z-10 mt-10 w-full">
+        <h1
+          class="text-[18vw] md:text-[12rem] font-black tracking-tighter leading-none"
+          data-aos="zoom-in"
+        >
+          ROOM
+        </h1>
+
+        <p
+          class="text-xl md:text-4xl font-light tracking-widest uppercase mt-2"
+        >
+          Escuela de Adoración
+        </p>
+
+        <div class="mt-16" data-aos="fade-up">
+          <h2 class="text-2xl md:text-4xl font-bold uppercase">
+            Inscripciones Abiertas
+          </h2>
+          <p class="text-sm md:text-lg font-light mt-2 uppercase text-gray-600">
+            Marzo 2026
+          </p>
+        </div>
+      </div>
+
+      <div class="separator mt-10 text-black">
+        <div class="line"></div>
+        <img
+          src="img/icon-room.png"
+          alt="Logo M"
+          class="w-12 h-12 object-contain"
+        />
+        <div class="line"></div>
+      </div>
+    </section>
+
+    <section class="py-20 bg-white w-full">
+      <div class="container mx-auto px-6 max-w-4xl text-left md:text-center">
+        <h3
+          class="text-3xl md:text-6xl font-normal leading-tight break-words"
+          data-aos="fade-up"
+        >
+          Room es un espacio <br class="hidden md:block" />
+          de <span class="font-bold">formación, entrenamiento</span>
+          <br class="hidden md:block" />
+          y <span class="font-bold">experiencia.</span>
+        </h3>
+      </div>
+    </section>
+
+    <section class="relative py-32 md:py-40 overflow-hidden bg-black w-full">
+      <div
+        class="absolute inset-0 z-0 bg-white pointer-events-none"
+        style="clip-path: polygon(0 0, 100% 0, 100% 35%, 0 100%)"
+      ></div>
+
+      <div
+        class="container mx-auto px-4 md:px-6 relative z-10 blend-difference"
+      >
+        <div
+          class="flex flex-col gap-6 md:gap-16 font-black text-[11vw] md:text-9xl uppercase tracking-tight leading-none break-words hyphens-auto"
+        >
+          <h2 data-aos="fade-right">
+            Formación <br />
+            Musical
+          </h2>
+          <h2 class="md:pl-32" data-aos="fade-right" data-aos-delay="100">
+            Entrenamiento <br />
+            Ministerial
+          </h2>
+          <h2 class="md:pl-64" data-aos="fade-right" data-aos-delay="200">
+            Experiencia <br />
+            con Dios
+          </h2>
+        </div>
+      </div>
+
+      <div class="absolute bottom-5 left-0 right-0 separator text-white z-20">
+        <div class="line"></div>
+        <img
+          src="img/icon-room.png"
+          alt="Logo M"
+          class="w-12 h-12 object-contain icon-invert"
+        />
+        <div class="line"></div>
+      </div>
+    </section>
+
+    <section
+      class="bg-black text-white py-32 flex flex-col items-center justify-center text-center w-full"
+    >
+      <div data-aos="zoom-out" class="px-4">
+        <p class="text-3xl md:text-5xl mb-2 font-light">¿Que es</p>
+        <h2 class="text-[18vw] md:text-9xl font-black tracking-tighter">
+          ROOM?
+        </h2>
+      </div>
+
+      <div class="separator mt-16 text-white">
+        <div class="line"></div>
+        <img
+          src="img/icon-room.png"
+          alt="Logo M"
+          class="w-12 h-12 object-contain icon-invert"
+        />
+        <div class="line"></div>
+      </div>
+    </section>
+
+    <section id="proposito" class="bg-black text-white py-20 w-full">
+      <div class="container mx-auto px-6 md:px-20">
+        <h2
+          class="text-4xl md:text-7xl font-black uppercase leading-tight break-words"
+          data-aos="fade-up"
+        >
+          Nuestro <br />
+          Propósito <br />
+          es entrenar <br />
+          personas <br />
+          que adoren <br />
+          con un <br />
+          corazón <br />
+          conforme al <br />
+          de Dios
+        </h2>
+      </div>
+    </section>
+
+    <section class="bg-white text-black py-24 w-full">
+      <div class="separator mb-10 text-black">
+        <div class="line"></div>
+        <img
+          src="img/icon-room.png"
+          alt="Logo M"
+          class="w-12 h-12 object-contain"
+        />
+        <div class="line"></div>
+      </div>
+
+      <div class="container mx-auto px-6 max-w-4xl text-center md:text-left">
+        <h2
+          class="text-3xl md:text-5xl font-black uppercase mb-10"
+          data-aos="fade-up"
+        >
+          Creemos que una de las busquedas que Dios tiene es por corazones que
+          lo adoren
+        </h2>
+        <p
+          class="text-lg md:text-2xl font-light leading-relaxed text-gray-800"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          Mas la hora viene, y ahora es, cuando los verdaderos adoradores
+          adorarán al Padre en espíritu y en verdad; porque también el Padre
+          tales adoradores busca que le adoren. Dios es Espíritu; y los que le
+          adoran, en espíritu y en verdad es necesario que adoren.
+        </p>
+        <p class="text-right mt-4 font-mono text-sm uppercase">Juan 4:23</p>
+      </div>
+    </section>
+
+    <div id="materias" class="w-full bg-black text-white py-5 px-6">
+      <h3
+        class="font-bold text-xl md:text-2xl uppercase tracking-wider text-center md:text-left container mx-auto"
+      >
+        Información de las materias
+      </h3>
+    </div>
+
+    <section class="bg-white text-black py-20 w-full">
+      <div class="container mx-auto px-6 md:px-20">
+        <h2
+          class="text-4xl sm:text-6xl md:text-8xl font-black uppercase leading-none mb-12 break-words"
+          data-aos="fade-right"
+        >
+          Primer <br />
+          Cuatrimestre
+        </h2>
+
+        <ul class="space-y-10 mb-20">
+          <li data-aos="fade-up">
+            <h4 class="text-3xl md:text-5xl font-black uppercase break-words">
+              - Audio I
+            </h4>
+            <p class="text-xl md:text-2xl font-light pl-6">Musical</p>
+          </li>
+          <li data-aos="fade-up" data-aos-delay="100">
+            <h4 class="text-3xl md:text-5xl font-black uppercase break-words">
+              - Pilares de la Cultura
+            </h4>
+            <p class="text-xl md:text-2xl font-light pl-6">
+              Ministerial Parte I
+            </p>
+          </li>
+          <li data-aos="fade-up" data-aos-delay="200">
+            <h4 class="text-3xl md:text-5xl font-black uppercase break-words">
+              - Corazón de Adorador
+            </h4>
+            <p class="text-xl md:text-2xl font-light pl-6">
+              Ministerial Parte II
+            </p>
+          </li>
+        </ul>
+      </div>
+
+      <div class="separator text-black">
+        <div class="line"></div>
+        <img
+          src="img/icon-room.png"
+          alt="Logo M"
+          class="w-12 h-12 object-contain"
+        />
+        <div class="line"></div>
+      </div>
+    </section>
+
+    <section class="bg-black text-white py-20 w-full">
+      <div class="container mx-auto px-6 md:px-20">
+        <h2
+          class="text-4xl sm:text-6xl md:text-8xl font-black uppercase leading-none mb-12 break-words"
+          data-aos="fade-right"
+        >
+          Segundo <br />
+          Cuatrimestre
+        </h2>
+
+        <ul class="space-y-10 mb-20">
+          <li data-aos="fade-up">
+            <h4 class="text-3xl md:text-5xl font-black uppercase break-words">
+              - Audio II
+            </h4>
+            <p class="text-xl md:text-2xl font-light pl-6">Musical</p>
+          </li>
+          <li data-aos="fade-up" data-aos-delay="100">
+            <h4 class="text-3xl md:text-5xl font-black uppercase break-words">
+              - Espíritu Santo
+            </h4>
+            <p class="text-xl md:text-2xl font-light pl-6">
+              Ministerial Parte I
+            </p>
+          </li>
+          <li data-aos="fade-up" data-aos-delay="200">
+            <h4 class="text-3xl md:text-5xl font-black uppercase break-words">
+              - Batallas del Corazón
+            </h4>
+            <p class="text-xl md:text-2xl font-light pl-6">
+              Ministerial Parte II
+            </p>
+          </li>
+        </ul>
+      </div>
+
+      <div class="separator text-white">
+        <div class="line"></div>
+        <img
+          src="img/icon-room.png"
+          alt="Logo M"
+          class="w-12 h-12 object-contain icon-invert"
+        />
+        <div class="line"></div>
+      </div>
+    </section>
+
+    <section
+      id="inscripciones"
+      class="relative bg-white pt-24 pb-40 text-center w-full"
+    >
+      <div class="container mx-auto px-6 mb-20" data-aos="zoom-in">
+        <h2 class="text-4xl md:text-6xl font-bold uppercase break-words">
+          Inscripciones Abiertas
+        </h2>
+        <p class="text-xl font-light uppercase mt-2">Marzo 2026</p>
+
+        <a
+          href="https://api.whatsapp.com/send?phone=5493425178705"
+          target="_blank"
+          class="inline-block mt-12 px-12 py-4 bg-black text-white font-bold text-xl hover:bg-gray-800 transition-colors uppercase tracking-widest"
+        >
+          Inscribirme
+        </a>
+      </div>
+
+      <div class="mb-10 flex justify-center">
+        <img
+          src="img/icon-room.png"
+          alt="Logo M"
+          class="w-12 h-12 object-contain"
+        />
+      </div>
+
+      <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
+        <svg
+          class="relative block w-full h-[100px] md:h-[150px]"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path d="M0,120 V50 Q600 -50 1200 50 V120 Z" fill="black"></path>
+        </svg>
+      </div>
+    </section>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 800,
+        once: true,
+        offset: 120,
+      });
+    </script>
+  </body>
+</html>
