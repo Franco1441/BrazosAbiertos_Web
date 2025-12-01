@@ -34,7 +34,7 @@
 
     <main>
       <!-- HERO -->
-      <section class="relative h-72 md:h-96 flex items-center justify-center">
+      <section class="relative h-72 md:h-96  flex items-center justify-center">
         <img
           src="img/cuidado-de-ancianos.jpg"
           alt="Fundación Brazos Abiertos"
@@ -82,7 +82,7 @@
 
       <!-- CÓMO AYUDAR -->
       <section
-        class="bg-gray-100 py-16 px-6 text-center border-t border-b border-gray-200"
+        class="bg-gray-100  py-16 px-6 text-center border-t border-b border-gray-200"
       >
         <h2 class="text-2xl md:text-3xl font-semibold mb-6">Cómo ayudar</h2>
         <p class="text-lg mb-6 max-w-2xl mx-auto text-gray-700">
@@ -106,64 +106,125 @@
         </div>
       </section>
 
-      <!-- CONTACTO -->
-      <section id="contacto" class="py-16 px-6 bg-white">
-        <div class="max-w-3xl mx-auto text-center">
-          <h2 class="text-2xl md:text-3xl font-semibold mb-6">Contacto</h2>
-          <p class="mb-8 text-gray-600">
-            Escribinos si querés más información o sumarte como voluntario.
-          </p>
-          <form
-            action="https://formspree.io/f/mayvlrzo"
-            method="POST"
-            class="space-y-4 text-left"
-          >
-            <input
-              type="text"
-              name="nombre"
-              placeholder="Tu nombre"
-              required
-              class="w-full p-3 border rounded"
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="Tu email"
-              required
-              class="w-full p-3 border rounded"
-            />
-            <textarea
-              name="mensaje"
-              placeholder="Tu mensaje"
-              rows="4"
-              required
-              class="w-full p-3 border rounded"
-            ></textarea>
-            <button
-              type="submit"
-              class="px-6 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition"
-            >
-              Enviar
-            </button>
-          </form>
-        </div>
-      </section>
-    </main>
-
-    <!-- FOOTER -->
-    <footer
-      class="border-t border-gray-200 py-6 text-center text-sm text-gray-500"
+          <section
+      id="contacto"
+      class="py-20 px-6 bg-gray-100 text-center"
+      data-aos="fade-up"
     >
-      © 2025 Fundación Brazos Abiertos. Todos los derechos reservados.
+      <h2 class="text-5xl font-bold mb-6">Contacto</h2>
+      <p class="mb-4">
+        Contactate con nosotros para mas informacion o maneras de ayudar!
+      </p>
+      <form id="whatsapp-form" class="max-w-xl mx-auto text-left">
+        <label class="block mb-2"
+          >Nombre:
+          <input
+            type="text"
+            name="nombre"
+            id="nombre"
+            required
+            class="w-full p-2 rounded text-black"
+          />
+        </label>
+        <label class="block mb-2"
+          >Email:
+          <input
+            type="email"
+            name="email"
+            id="email"
+            required
+            class="w-full p-2 rounded text-black"
+          />
+        </label>
+        <label class="block mb-4"
+          >Mensaje:
+          <textarea
+            name="mensaje"
+            id="mensaje"
+            rows="4"
+            required
+            class="w-full p-2 rounded text-black"
+          ></textarea>
+        </label>
+        <button
+          type="submit"
+          class="bg-green-600 hover:bg-green-700 px-6 py-3 rounded text-white transition w-full flex items-center justify-center space-x-2 font-bold"
+        >
+          <i class="fab fa-whatsapp text-xl"></i>
+          <span>Enviar Mensaje por WhatsApp</span>
+        </button>
+      </form>
+    </section>
+
+    <footer
+      class="bg-white py-8 px-6 text-center text-sm text-black"
+
+    >
+      © 2025 Iglesia Brazos Abiertos. Todos los derechos reservados.
     </footer>
 
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script>
-      function copiarAlias() {
-        const alias = document.getElementById("alias").textContent;
-        navigator.clipboard.writeText(alias).then(() => {
-          alert("Alias copiado: " + alias);
-        });
+      AOS.init({ once: true, offset: 100, duration: 900 });
+
+      function toggleMenu(btn) {
+        const menu = document.getElementById("mobile-menu");
+        const isOpen = !menu.classList.contains("hidden");
+        menu.classList.toggle("hidden");
+        if (btn) btn.setAttribute("aria-expanded", String(!isOpen));
       }
+
+      document.addEventListener("click", (e) => {
+        const menu = document.getElementById("mobile-menu");
+        const trigger = document.querySelector(
+          "button[aria-controls='mobile-menu']"
+        );
+        if (!menu || menu.classList.contains("hidden")) return;
+        if (!menu.contains(e.target) && !trigger.contains(e.target)) {
+          menu.classList.add("hidden");
+          trigger.setAttribute("aria-expanded", "false");
+        }
+      });
+
+      // Script para Formulario de WhatsApp
+      document
+        .getElementById("whatsapp-form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Evita el envío tradicional del formulario
+
+          const nombre = document.getElementById("nombre").value;
+          const email = document.getElementById("email").value;
+          const mensaje = document.getElementById("mensaje").value;
+
+          // Número de WhatsApp (usando el mismo número que tenías)
+          const phoneNumber = "5493425178705";
+
+          // Construye el mensaje
+          const whatsappMessage = `
+*Mensaje de Contacto BAEM - Web:*
+
+Hola, mi nombre es ${nombre}.
+Mi correo es: ${email}
+Estoy consultando sobre BAEM.
+El mensaje que quiero enviarles es el siguiente:
+
+"${mensaje}"
+
+¡Gracias!
+        `;
+
+          // Codifica el mensaje para que sea seguro en la URL
+          const encodedMessage = encodeURIComponent(whatsappMessage.trim());
+
+          // Construye el enlace de WhatsApp
+          const whatsappUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`;
+
+          // Abre WhatsApp en una nueva pestaña o ventana
+          window.open(whatsappUrl, "_blank");
+
+          // Limpiar el formulario
+          this.reset();
+        });
     </script>
   </body>
 </html>
