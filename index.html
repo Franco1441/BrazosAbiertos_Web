@@ -61,12 +61,12 @@
       data-aos="fade-in"
     >
       <video
-        autoplay
+        id="hero-video"
         muted
         loop
         playsinline
         class="video-background"
-        poster="img/poster-video.jpg"
+        poster="img/poster video.JPG"
       >
         <source src="videos/fondo.mp4" type="video/mp4" />
       </video>
@@ -74,7 +74,7 @@
       <div
         class="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/100"
       ></div>
-      <div class="z-10 p-4">
+      <div class="z-10 p-40">
         <h1 class="text-5xl md:text-6xl font-bold mb-4">
           BRAZOS ABIERTOS IGLESIA
         </h1>
@@ -626,6 +626,25 @@ El mensaje que quiero enviarles es el siguiente:
           // Limpiar el formulario
           this.reset();
         });
+      window.addEventListener("load", () => {
+        const video = document.getElementById("hero-video");
+
+        // 1. Esperamos 2 segundos mostrando el poster
+        setTimeout(() => {
+          // 2. Iniciamos la reproducción
+          video
+            .play()
+            .then(() => {
+              // 3. Una vez que el video arranca, lo hacemos visible con fade-in
+              video.classList.add("video-visible");
+            })
+            .catch((error) => {
+              console.log("Reproducción prevenida:", error);
+              // Si falla el auto-play, igual lo mostramos para que se vea el poster
+              video.classList.add("video-visible");
+            });
+        }, 2500); // 2500ms = 2 segundos
+      });
     </script>
   </body>
 </html>
