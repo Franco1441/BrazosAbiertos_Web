@@ -445,6 +445,15 @@
         once: true,
         offset: 120,
       });
+
+      function toggleMenu(button) {
+        const menu = document.getElementById("mobile-menu");
+
+        menu.classList.toggle("hidden");
+
+        const isExpanded = button.getAttribute("aria-expanded") === "true";
+        button.setAttribute("aria-expanded", !isExpanded);
+      }
     </script>
   </body>
 </html>
