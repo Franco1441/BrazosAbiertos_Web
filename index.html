@@ -59,6 +59,7 @@
       id="inicio"
       class="relative w-full flex text-center items-center justify-center min-h-[400px] md:min-h-[800px] overflow-hidden"
       data-aos="fade-in"
+      data-aos-delay="100"
     >
       <video
         id="hero-video"
@@ -627,19 +628,18 @@ El mensaje que quiero enviarles es el siguiente:
           // Abre WhatsApp en una nueva pestaña o ventana
           window.open(whatsappUrl, "_blank");
 
-          // Limpiar el formulario
+          // Limpia el formulario
           this.reset();
         });
       window.addEventListener("load", () => {
         const video = document.getElementById("hero-video");
 
-        // 1. Esperamos 2 segundos mostrando el poster
+        // Script para cargar y reproducir el video después de un 2,5seg
         setTimeout(() => {
-          // 2. Iniciamos la reproducción
           video
             .play()
             .then(() => {
-              // 3. Una vez que el video arranca, lo hacemos visible con fade-in
+              // Una vez que el video arranca, se hace visible
               video.classList.add("video-visible");
             })
             .catch((error) => {
@@ -647,7 +647,7 @@ El mensaje que quiero enviarles es el siguiente:
               // Si falla el auto-play, igual lo mostramos para que se vea el poster
               video.classList.add("video-visible");
             });
-        }, 2500); // 2500ms = 2 segundos
+        }, 2500); // 2500ms = 2,5 segundos
       });
     </script>
   </body>
