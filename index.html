@@ -57,17 +57,16 @@
   <body class="text-white bg-black">
     <section
       id="inicio"
-      class="relative w-full flex text-center items-center justify-center min-h-[400px] md:min-h-[800px] overflow-hidden"
+      class="relative w-full flex text-center items-center justify-center min-h-[400px] md:min-h-[800px] overflow-hidden bg-cover bg-center"
+      style="background-image: url('img/poster video.JPG')"
       data-aos="fade-in"
-      data-aos-delay="100"
     >
       <video
         id="hero-video"
         muted
         loop
         playsinline
-        class="video-background"
-        poster="img/poster video.JPG"
+        class="video-background opacity-0 transition-opacity duration-[4000ms] ease-in-out"
       >
         <source src="videos/fondo.mp4" type="video/mp4" />
       </video>
@@ -75,6 +74,7 @@
       <div
         class="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/100"
       ></div>
+
       <div class="z-10 p-40">
         <h1 class="text-5xl md:text-6xl font-bold mb-4">
           BRAZOS ABIERTOS IGLESIA
@@ -634,20 +634,21 @@ El mensaje que quiero enviarles es el siguiente:
       window.addEventListener("load", () => {
         const video = document.getElementById("hero-video");
 
-        // Script para cargar y reproducir el video después de un 2,5seg
         setTimeout(() => {
           video
             .play()
             .then(() => {
-              // Una vez que el video arranca, se hace visible
-              video.classList.add("video-visible");
+              // Quitamos la transparencia y ponemos opacidad total
+              video.classList.remove("opacity-0");
+              video.classList.add("opacity-100");
             })
             .catch((error) => {
-              console.log("Reproducción prevenida:", error);
-              // Si falla el auto-play, igual lo mostramos para que se vea el poster
-              video.classList.add("video-visible");
+              console.log("Error al reproducir:", error);
+              // Mostramos el video igual por si el usuario le da play manual
+              video.classList.remove("opacity-0");
+              video.classList.add("opacity-100");
             });
-        }, 4000); // 4000ms = 4 segundos
+        }, 4000); // 4 segundos de espera
       });
     </script>
   </body>
